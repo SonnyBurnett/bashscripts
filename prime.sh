@@ -16,7 +16,11 @@ clear
 STARTING=$(date +%s.%N)
 
 COUNTER=0
-TOTAL=500
+if [ $# -gt 0 ]; then
+  TOTAL=$1
+else
+  TOTAL=100
+fi
 PRIME=2
 
 while [ $COUNTER -lt $TOTAL ]
