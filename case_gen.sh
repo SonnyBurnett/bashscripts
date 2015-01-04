@@ -18,7 +18,7 @@ cat >>$FILENAAM <<EOL
 # Example until statements
 read -p "Pick your choice: " CHOICE
 
-case \$CHOICE in
+case "\$CHOICE" in
    1|een)         echo "You picked one. Excellent choice!"                 ;;
    2|twee)        echo "Two is not a bad choice"                           ;;
    3|drie|three)  echo
