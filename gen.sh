@@ -34,8 +34,7 @@ NAAM="script"
 CHOICE=""
 
 #
-# De gebruiker kan alle opties ook via de command-prompt specificeren
-# Controleer of er opties zijn opgegeven
+# Check if user has specified any options on the command-line
 #
 
 if [ $# -gt 0 ] ; then
