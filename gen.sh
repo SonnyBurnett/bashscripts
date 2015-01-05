@@ -23,6 +23,7 @@ source if_gen.sh
 source while_gen.sh
 source until_gen.sh
 source case_gen.sh
+source for_gen.sh
 
 #
 #
@@ -72,6 +73,7 @@ case $CHOICE in
    w|while)  gen_while   ;;
    u|until)  gen_until   ;;
    c|case)   gen_case    ;;
+   f|for)    gen_for     ;;
 esac
 
 
