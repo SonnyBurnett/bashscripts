@@ -45,7 +45,7 @@ done
 # loop through numbers
 #
 
-for NMBR in 1,2,3,4,5,6,7,8,9
+for NMBR in 1 2 3 4 5 6 7 8 9
 do
   echo "Loop number: " \$NMBR 
 done
@@ -56,7 +56,7 @@ done
 
 for (( ; ; ))
 do
-  echo "This wil keep going until you enter Ctrl-C, but I will stop it anyway"
+  echo "This wil keep on going until you enter Ctrl-C, but I will stop it anyway"
   sleep 10
   break
 done  
@@ -67,12 +67,10 @@ done
 
 for LOOPNUM in {1..50}
 do
-  echo "Loop number: " \$LOOPNUM
   RNDM=\$RANDOM
+  echo "My random number is: " \$RNDM
   if [ \$[\$RNDM % 10] -eq "0" ]; then
      break
-  else
-     echo \$RNDM
   fi
 done
 
@@ -80,13 +78,27 @@ done
 # loop through a directory
 #
 
-for file in "./*"
+for file in *.sh
 do
    echo \${file}
-   echo
 done
 
+#
+# skip remaining part of iteration with continue -- dirty programming
+# it is more or less the else part of an if statement.
+# but now it skips all code after the continue, and goes to the next iteration.
+#
 
+NUMBER=\$(( RANDOM % 100 ))
+echo \$NUMBER " is a prime."
+for (( P=2; P<NUMBER; P++ )) 
+do
+   if [[ \$(( NUMBER % P )) -ne 0 ]]; then
+     continue
+   fi
+   echo "No you idiot! " \$NUMBER " is not a prime"
+   break
+done
 
 exit 0
 EOL
