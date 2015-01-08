@@ -24,6 +24,7 @@ source while_gen.sh
 source until_gen.sh
 source case_gen.sh
 source for_gen.sh
+source getopts_gen.sh
 
 #
 #
@@ -69,11 +70,12 @@ EOL
 
 
 case $CHOICE in
-   i|if)     gen_if      ;;
-   w|while)  gen_while   ;;
-   u|until)  gen_until   ;;
-   c|case)   gen_case    ;;
-   f|for)    gen_for     ;;
+   i|if)      gen_if      ;;
+   w|while)   gen_while   ;;
+   u|until)   gen_until   ;;
+   c|case)    gen_case    ;;
+   f|for)     gen_for     ;;
+   g|getopts) gen_getopts ;;
 esac
 
 
