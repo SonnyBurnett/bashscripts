@@ -25,6 +25,7 @@ source until_gen.sh
 source case_gen.sh
 source for_gen.sh
 source getopts_gen.sh
+source readwrite_gen.sh
 
 #
 #
@@ -40,7 +41,7 @@ CHOICE=""
 #
 
 if [ $# -gt 0 ] ; then
-  while getopts "iwufcgn:" OPTIE; do
+  while getopts "iwufrcgn:" OPTIE; do
     case $OPTIE in
        i  ) CHOICE="if"        ;;
        w  ) CHOICE="while"     ;;
@@ -48,6 +49,7 @@ if [ $# -gt 0 ] ; then
        f  ) CHOICE="for"       ;;
        c  ) CHOICE="case"      ;;
        g  ) CHOICE="getopts"   ;;
+       r  ) CHOICE="readwrite" ;;
        n  ) NAAM=$OPTARG       ;;
        \? ) fouten 1           ;;
        :  ) fouten 2 -$OPTARG  ;;
@@ -70,12 +72,13 @@ EOL
 
 
 case $CHOICE in
-   i|if)      gen_if      ;;
-   w|while)   gen_while   ;;
-   u|until)   gen_until   ;;
-   c|case)    gen_case    ;;
-   f|for)     gen_for     ;;
-   g|getopts) gen_getopts ;;
+   i|if)        gen_if        ;;
+   w|while)     gen_while     ;;
+   u|until)     gen_until     ;;
+   c|case)      gen_case      ;;
+   f|for)       gen_for       ;;
+   g|getopts)   gen_getopts   ;;
+   r|readwrite) gen_readwrite ;;
 esac
 
 

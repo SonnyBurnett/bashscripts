@@ -17,6 +17,7 @@ echo "u - until"
 echo "f - for"
 echo "c - case"
 echo "g - getopts"
+echo "r - read/write"
 echo
 echo "q - quit"
 echo
