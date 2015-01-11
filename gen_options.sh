@@ -18,6 +18,7 @@ echo "f - for"
 echo "c - case"
 echo "g - getopts"
 echo "r - read/write"
+echo "p - function"
 echo
 echo "q - quit"
 echo
