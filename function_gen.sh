@@ -72,7 +72,7 @@ funct4()
 
 funct5()
 {
-  LOCALVAR=5
+  local LOCALVAR=5
   echo "This is function funct5"
   GLOBALVAR=5
   echo "Within funct5 LOCALVAR is: " \$LOCALVAR " and GLOBALVAR is: " \$GLOBALVAR
