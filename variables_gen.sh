@@ -27,7 +27,7 @@ cat >>$FILENAAM <<EOL
 # String
 #
 
-STR_VAR="This is a very nice string"
+STR_VAR="This text is too nice to be true"
 echo "STR_VAR has the value: " \$STR_VAR
 echo "Length of this string is: " \${#STR_VAR}
 
@@ -38,7 +38,10 @@ echo "Length of this string is: " \${#STR_VAR}
 echo "remove the first 5 characters of STR_VAR: " \${STR_VAR:5}
 echo "remove the first 5 characters and take the next 2 characters of STR_VAR: " \${STR_VAR:5:2}
 echo "remove the word nice from STR_VAR: " \${STR_VAR:#nice}
-
+echo "remove all leading t's from STR_VAR: " \${STR_VAR#t*)
+echo "remove all words with a leading t from STR_VAR: " \${STR_VAR##t*}
+echo "remove all trailing e's from STR_VAR: " \${STR_VAR%e}
+echo "remove all words with a trailing e from STR_VAR: " \${STR_VAR%%e} 
 
 #
 # integer

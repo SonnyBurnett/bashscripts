@@ -9,12 +9,12 @@ clear
 echo "Generate Bash script constructs"
 echo
 echo
-echo "Select a construct"
+echo "Select a construct                        Select a variable type"
 echo "-------------------------------------------------------------------------"
-echo "i - if-then-else"
-echo "w - while"
-echo "u - until"
-echo "f - for"
+echo "i - if-then-else                          s - string"
+echo "w - while                                 a - array"
+echo "u - until                                 t - integer"
+echo "f - for                                   "
 echo "c - case"
 echo "g - getopts"
 echo "r - read/write"

@@ -27,6 +27,7 @@ source for_gen.sh
 source getopts_gen.sh
 source readwrite_gen.sh
 source function_gen.sh
+source string_gen.sh
 
 #
 #
@@ -42,7 +43,7 @@ CHOICE=""
 #
 
 if [ $# -gt 0 ] ; then
-  while getopts "iwufrpcgn:" OPTIE; do
+  while getopts "iwufrpcsgn:" OPTIE; do
     case $OPTIE in
        i  ) CHOICE="if"        ;;
        w  ) CHOICE="while"     ;;
@@ -52,6 +53,7 @@ if [ $# -gt 0 ] ; then
        g  ) CHOICE="getopts"   ;;
        r  ) CHOICE="readwrite" ;;
        p  ) CHOICE="function"  ;;
+       s  ) CHOICE="string"    ;;
        n  ) NAAM=$OPTARG       ;;
        \? ) fouten 1           ;;
        :  ) fouten 2 -$OPTARG  ;;
@@ -82,6 +84,7 @@ case $CHOICE in
    g|getopts)   gen_getopts   ;;
    r|readwrite) gen_readwrite ;;
    p|function)  gen_function  ;;
+   s|string)    gen_string    ;;
 esac
 
 
