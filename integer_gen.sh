@@ -94,7 +94,7 @@ echo "1 erbij is: " \$OUTCOME6
 
 INT4=12
 INT5=6
-echo "Example 11, use paranthesis with add"
+echo "Example 11, use parenthesis with add"
 OUTCOME7=\$((INT4 + INT5))
 echo \$INT4 " + " \$INT5 " = " \$OUTCOME7
 
