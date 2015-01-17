@@ -30,6 +30,7 @@ source function_gen.sh
 source string_gen.sh
 source integer_gen.sh
 source float_gen.sh
+source array_gen.sh
 
 #
 #
@@ -45,7 +46,7 @@ CHOICE=""
 #
 
 if [ $# -gt 0 ] ; then
-  while getopts "iwufrptclsgn:" OPTIE; do
+  while getopts "iwufrpatclsgn:" OPTIE; do
     case $OPTIE in
        i  ) CHOICE="if"        ;;
        w  ) CHOICE="while"     ;;
@@ -58,6 +59,7 @@ if [ $# -gt 0 ] ; then
        s  ) CHOICE="string"    ;;
        t  ) CHOICE="integer"   ;;
        l  ) CHOICE="float"     ;;
+       a  ) CHOICE="array"     ;;
        n  ) NAAM=$OPTARG       ;;
        \? ) fouten 1           ;;
        :  ) fouten 2 -$OPTARG  ;;
@@ -91,6 +93,7 @@ case $CHOICE in
    s|string)    gen_string    ;;
    t|integer)   gen_integer   ;;
    l|float)     gen_float     ;;
+   a|array)     gen_array     ;;
 esac
 
 
