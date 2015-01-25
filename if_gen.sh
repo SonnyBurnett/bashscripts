@@ -25,8 +25,11 @@ cat >>$FILENAAM <<EOL
 #
 # Example if statements
 #
+EOL
 
 
+if [[ $1 == "1" || $1 == "9" ]] ; then
+cat >>$FILENAAM <<EOL
 #
 # single numerical condition
 # -eq = equal   -ne = not equal    -lt = less than    -le = less or equal    -gt = greater than    -ge = greater or equal
@@ -37,7 +40,11 @@ if [ \$VARIABLE -eq 0 ]; then
    echo "VARIABLE"
    echo \$VARIABLE
 fi
+EOL
+fi
 
+if [[ $1 == "2" || $1 == "9" ]] ; then
+cat >>$FILENAAM <<EOL
 #
 # single string condition
 # -z = empty    -n = not empty    == equal    !=   not equal
@@ -52,7 +59,11 @@ fi
 if [ -n "\$NAME" ]; then
    echo "NAME has a value"
 fi
+EOL
+fi
 
+if [[ $1 == "3" || $1 == "9" ]] ; then
+cat >>$FILENAAM <<EOL
 #
 # if then else with strings
 #
@@ -62,8 +73,11 @@ if [ -z "\$NAME" ]; then
 else
    echo "NAME has a value"
 fi
+EOL
+fi
 
-
+if [[ $1 == "4" || $1 == "9" ]] ; then
+cat >>$FILENAAM <<EOL
 #
 # multiple numerical condition
 # && = and    || = or
@@ -106,8 +120,30 @@ elif [ \$[\$YEARNUM % 4] -eq 0 ]; then
 else
    echo \$YEARNUM " not a leap year"
 fi
+EOL
+fi
 
+if [[ $1 == "5" || $1 == "9" ]] ; then
+cat >>$FILENAAM <<EOL
+# Something about substitution operators
 
+# In the first example VARX is not assigned a value
+
+echo "First let us see if VARx exists: " \${VARX:-empty parameter}
+echo "The value of VARX is: " \$VARX
+VARX="something"
+echo "Now we try it again with a value: " \${VARX:-empty}
+
+# In the second example VARY is assigned a value
+
+echo "Try it again with an non-existing parameter: " \${VARY:=empty parameter}
+echo "The value of VARY is: " \$VARY
+VARY="something"
+echo "Now the parameter has a value: " \${VARY:=empty}
+EOL
+fi
+
+cat >>$FILENAAM <<EOL
 exit 0
 EOL
 }

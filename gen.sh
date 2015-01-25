@@ -20,6 +20,7 @@ clear
 source gen_fouten.sh
 source gen_options.sh
 source if_gen.sh
+source if_options.sh
 source while_gen.sh
 source until_gen.sh
 source case_gen.sh
@@ -31,6 +32,7 @@ source string_gen.sh
 source integer_gen.sh
 source float_gen.sh
 source array_gen.sh
+source select_gen.sh
 
 #
 #
@@ -46,12 +48,13 @@ CHOICE=""
 #
 
 if [ $# -gt 0 ] ; then
-  while getopts "iwufrpatclsgn:" OPTIE; do
+  while getopts "iwufrepatclsgn:" OPTIE; do
     case $OPTIE in
        i  ) CHOICE="if"        ;;
        w  ) CHOICE="while"     ;;
        u  ) CHOICE="until"     ;;
        f  ) CHOICE="for"       ;;
+       e  ) CHOICE="select"    ;;
        c  ) CHOICE="case"      ;;
        g  ) CHOICE="getopts"   ;;
        r  ) CHOICE="readwrite" ;;
@@ -82,11 +85,12 @@ EOL
 
 
 case $CHOICE in
-   i|if)        gen_if        ;;
+   i|if)        ifoptions     ;;
    w|while)     gen_while     ;;
    u|until)     gen_until     ;;
    c|case)      gen_case      ;;
    f|for)       gen_for       ;;
+   e|select)    gen_select    ;;
    g|getopts)   gen_getopts   ;;
    r|readwrite) gen_readwrite ;;
    p|function)  gen_function  ;;
@@ -94,6 +98,7 @@ case $CHOICE in
    t|integer)   gen_integer   ;;
    l|float)     gen_float     ;;
    a|array)     gen_array     ;;
+   q|quit)      exit 0        ;;
 esac
 
 
